@@ -5,3 +5,6 @@ all:
 
 clean:
 	rm -f $(TARGET)
+
+test:
+	bash -c "time ./Program.exe 3000000"
