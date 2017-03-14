@@ -13,7 +13,7 @@ int main() {
     int primct=0;
 
 #if defined(_OPENMP)
-    #pragma omp parallel for
+    #pragma omp parallel for reduction(+:primct)
 #endif
 
     for (int i=MAXNUM; i>2; i--) {
