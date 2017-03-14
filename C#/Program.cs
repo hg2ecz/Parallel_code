@@ -23,13 +23,13 @@ namespace ParallelTest
 
             int numberOfPrimes = 0;
 
-            Parallel.For(3, maxnum, n => {
+            Parallel.For(2, maxnum, n => {
                 int sqi = (int) Math.Sqrt(n);
 
-                if ((n & 1) == 0)
-                    return;
+//                if ((n & 1) == 0)     -- don't optimize the searching ...
+//                    return;           -- we want measure the speed of all iteration
 
-                for (int i = 3; i <= sqi; i += 2)
+                for (int i = 2; i <= sqi; i++)
                 {
                     if (n % i == 0)
                     {
