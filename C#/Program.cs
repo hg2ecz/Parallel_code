@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -67,6 +68,36 @@ namespace ParallelTest
             Console.WriteLine($"{numberOfPrimes} darabot találtam {sw.ElapsedMilliseconds} ms alatt.");
         }
 
+        private static void FindPrimesLinq(int maxnum)
+        {
+            Console.WriteLine($"Prímszámok keresése LINQ-val {maxnum}-ig...");
+
+            var sw = Stopwatch.StartNew();
+
+            int numberOfPrimes = Enumerable.Range(2, maxnum)
+                .AsParallel()
+                .Where(v =>
+                {
+                    int sqi = (int)Math.Sqrt((int)v);
+
+                    //                if ((n & 1) == 0)     -- don't optimize the searching ...
+                    //                    return;           -- we want measure the speed of all iteration
+
+                    for (int i = 2; i <= sqi; i++)
+                    {
+                        if ((int)v % i == 0)
+                        {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                })
+                .Count();
+
+            Console.WriteLine($"{numberOfPrimes} darabot találtam {sw.ElapsedMilliseconds} ms alatt.");
+        }
+
         static void Main(string[] args)
         {
             if (args.Length < 1)
@@ -77,11 +108,14 @@ namespace ParallelTest
 
             int maxnum = Int32.Parse(args[0]);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
                 FindPrimes(maxnum);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
                 FindPrimesTasks(maxnum);
+
+            for (int i = 0; i < 5; i++)
+                FindPrimesLinq(maxnum);
         }
     }
 }
