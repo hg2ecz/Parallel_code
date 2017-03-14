@@ -1,0 +1,20 @@
+CC=gcc
+CFLAGS =-Wall -O2 -funroll-all-loops
+
+CFLAGS+=-DMAXNUM=1000000 -fopenmp
+
+LDFLAGS=-lm -s -lgomp
+OBJS=paralleltest.o
+
+TARGET=parallel
+
+all: $(OBJS)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(TARGET)
+
+clean:
+	rm -rf $(OBJS) $(TARGET)
+
+PROG=$(TARGET)
+test:
+	./$(PROG)
+	@(./$(PROG);./$(PROG);./$(PROG);./$(PROG);./$(PROG);  ./$(PROG);./$(PROG);./$(PROG);./$(PROG);./$(PROG) )|../avgcalc.py
