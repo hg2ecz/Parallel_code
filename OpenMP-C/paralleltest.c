@@ -13,7 +13,7 @@ int main() {
     int primct=0;
 
 #if defined(_OPENMP)
-    #pragma omp parallel for reduction(+:primct)
+    #pragma omp parallel for reduction(+:primct) num_threads(4*CPUNUM)
 #endif
 
     for (int i=MAXNUM; i>2; i--) {
