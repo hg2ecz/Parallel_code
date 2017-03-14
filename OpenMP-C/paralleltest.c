@@ -13,10 +13,11 @@ int main() {
     int primct=0;
 
 #if defined(_OPENMP)
-    #pragma omp parallel for reduction(+:primct) num_threads(4*CPUNUM)
+    #pragma omp parallel for reduction(+:primct)
+//    #pragma omp parallel for reduction(+:primct) num_threads(4*CPUNUM)
 #endif
 
-    for (int i=MAXNUM; i>2; i--) {
+    for (int i=MAXNUM; i>=2; i--) {
 	_Bool prim = TRUE;
 	int sqi = sqrt(i);
 	for (int j = 2; j<=sqi; j++) {
