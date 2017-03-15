@@ -1,4 +1,4 @@
-TARGET = paralleltest.py
+TARGET = parallel.py
 
 all:
 clean:

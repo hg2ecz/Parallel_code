@@ -15,7 +15,7 @@ def primtest_thread(vi, primct):
 	if i < 2: return # end
 	prim = True
 	sqi = int(math.sqrt(i))
-	for j in xrange(2, sqi):
+	for j in xrange(2, sqi+1):
 	    if not (i%j):
 		prim=False
 		break
