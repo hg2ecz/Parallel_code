@@ -24,7 +24,7 @@ int main() {
 
     std::for_each(buffer.begin(), buffer.end(), [&at_primct](int& i) {
 	bool prim = TRUE;
-	int sqi = sqrt(i);
+	int sqi = sqrtf(i);
 	for (int j = 2; j<=sqi; j++) {
 	    if (!(i%j)) {
 		prim=FALSE;
