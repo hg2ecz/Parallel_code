@@ -8,22 +8,23 @@ namespace ParallelTest
 {
     class Program
     {
+	private static bool isPrime(int j)
+        {
+            int sqj = (int)Math.Sqrt(j);
+
+            for (int i = 2; i <= sqj; i++)
+            {
+                if (j % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private static void FindPrimesTasks(int maxnum)
         {
-            bool isPrime(int j)
-            {
-                int sqj = (int)Math.Sqrt(j);
-
-                for (int i = 2; i <= sqj; i++)
-                {
-                    if (j % i == 0)
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
 
             int num = 1;
             int numberOfPrimes = 0;
