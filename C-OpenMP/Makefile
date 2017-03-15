@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS =-Wall -O2 -funroll-all-loops
 
-CFLAGS+=-DMAXNUM=3000000 -fopenmp -DCPUNUM=`nproc`
+CFLAGS+=-DMAXNUM=3000000 -fopenmp -DCPUNUM=`nproc` -std=c++14
 
 LDFLAGS=-lm -s -lgomp
 OBJS=paralleltest.o
