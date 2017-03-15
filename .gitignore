@@ -5,3 +5,6 @@
 /C#/bin
 /C#/obj
 *.suo
+/C#-Tasks/obj/Debug/netcoreapp1.1
+/C#-Tasks/obj
+/C#-Tasks/bin/Debug/netcoreapp1.1
