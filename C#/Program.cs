@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -38,32 +39,49 @@ namespace ParallelTest
 
         private static void FindPrimesTasks(int maxnum)
         {
+            bool isPrime(int j)
+            {
+                int sqj = (int)Math.Sqrt(j);
+
+                for (int i = 2; i <= sqj; i++)
+                {
+                    if (j % i == 0)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            int num = 1;
+            int numberOfPrimes = 0;
+
             Console.WriteLine($"Prímszámok keresése taszkokkal {maxnum}-ig...");
 
             var sw = Stopwatch.StartNew();
 
-            int numberOfPrimes = 0;
+            Task[] tasks = new Task[Environment.ProcessorCount];
 
-            for (int n = 2; n < maxnum; n++)
+            for (int n = 0; n < Environment.ProcessorCount; n++)
             {
-                Task.Factory.StartNew(v =>
+                tasks[n] = new Task(() =>
                 {
-                    int sqi = (int)Math.Sqrt((int)v);
+                    var j = Interlocked.Increment(ref num);
 
-                    //                if ((n & 1) == 0)     -- don't optimize the searching ...
-                    //                    return;           -- we want measure the speed of all iteration
-
-                    for (int i = 2; i <= sqi; i++)
+                    while (j <= maxnum)
                     {
-                        if ((int)v % i == 0)
-                        {
-                            return;
-                        }
-                    }
+                        if (isPrime(j))
+                            Interlocked.Increment(ref numberOfPrimes);
 
-                    Interlocked.Increment(ref numberOfPrimes);
-                }, n);
+                        j = Interlocked.Increment(ref num);
+                    }
+                }, TaskCreationOptions.LongRunning);
+
+                tasks[n].Start();
             }
+
+            Task.WaitAll(tasks);
 
             Console.WriteLine($"{numberOfPrimes} darabot találtam {sw.ElapsedMilliseconds} ms alatt.");
         }
