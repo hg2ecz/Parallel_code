@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS =-Wall -O2 -funroll-all-loops
+CFLAGS =-Wall -O2 -funroll-all-loops -std=c++14
 
 CFLAGS+=-DMAXNUM=3000000
 
