@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <atomic>
 
 #include <math.h>
 #include <time.h>
@@ -18,9 +19,10 @@ int main() {
     std::vector<int> buffer(MAXNUM-1);
     for (int i=0; i<MAXNUM-1; i++) buffer[i]=MAXNUM-i;
 
-    int primct=0;
+    std::atomic<int> at_primct;
+    at_primct = 0;
 
-    std::for_each(buffer.begin(), buffer.end(), [&primct](int& i) {
+    std::for_each(buffer.begin(), buffer.end(), [&at_primct](int& i) {
 	bool prim = TRUE;
 	int sqi = sqrt(i);
 	for (int j = 2; j<=sqi; j++) {
@@ -29,15 +31,19 @@ int main() {
 		break;
 	    }
 	}
-	if (prim == TRUE)
-#ifdef _GLIBCXX_PARALLEL
+/*	if (prim == TRUE) // <-- if type is   int primct;
+	#ifdef _GLIBCXX_PARALLEL
 	    __sync_fetch_and_add(&primct, 1); // thread safe
-#else
-	    primct++;
-#endif
+	#else
+	    primct++;                         // no thread safe
+	#endif
+*/
+	if (prim == TRUE) at_primct++; // std::atomic<int> at_primct;
+
     });
 
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &gend);
     eltime = 1000.0*(gend.tv_sec - gstart.tv_sec) + (gend.tv_nsec - gstart.tv_nsec)/1000000.;
+    int primct = at_primct;
     printf("%d %.3f ms\n", primct, eltime);
 }
