@@ -7,4 +7,4 @@ clean:
 	rm -f $(TARGET)
 
 test:
-	bash -c "time ./Program.exe 3000000"
+	bash -c "time ./$(TARGET) 3000000"

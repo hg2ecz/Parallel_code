@@ -1,0 +1,6 @@
+all:
+	dotnet restore
+	dotnet build -c Release
+
+run:
+	dotnet bin/Release/netcoreapp1.1/ParallelTest.dll 3000000

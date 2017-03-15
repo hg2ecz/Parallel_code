@@ -19,7 +19,7 @@ int main() {
 
     for (int i=MAXNUM; i>=2; i--) {
 	_Bool prim = TRUE;
-	int sqi = sqrt(i);
+	int sqi = sqrtf(i);
 	for (int j = 2; j<=sqi; j++) {
 	    if (!(i%j)) {
 		prim=FALSE;

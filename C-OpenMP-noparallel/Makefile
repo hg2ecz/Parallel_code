@@ -15,4 +15,4 @@ clean:
 	rm -f $(OBJS) $(TARGET)
 
 test:
-	bash -c "time ./noparallel"
+	bash -c "time ./$(TARGET)"

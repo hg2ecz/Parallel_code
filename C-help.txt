@@ -1,0 +1,26 @@
+OpenMP specification: http://www.openmp.org/
+    #pragma omp parallel for reduction(+:primct)
+    gcc: -fopenmp    and by linking -lgomp
+
+
+pthread:
+    <pthread.h> and by linking -lpthread
+
+  init:
+    static pthread_mutex_t mut = PTHREAD_MUTEX_INITIALIZER;
+
+  use in thread:
+    pthread_mutex_lock(&mut);
+     ...
+    pthread_mutex_unlock(&mut);
+
+
+pthread event:
+
+  data source:
+    getnew(&data[pos]); pthread_cond_signal(&cond);
+
+  data worker:
+    if (data < REQSIZE) {
+      pthread_cond_wait(&cond, &mut);
+    }

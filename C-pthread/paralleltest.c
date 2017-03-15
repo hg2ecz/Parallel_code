@@ -19,7 +19,7 @@ static void *primtest_thread(void *arg) {
 	pthread_mutex_lock(&mut_i); i=globi--; pthread_mutex_unlock(&mut_i);
 	if (i < 2) pthread_exit(0); // end
 	_Bool prim = TRUE;
-	int sqi = sqrt(i);
+	int sqi = sqrtf(i);
 	for (int j = 2; j<=sqi; j++) {
 	    if (!(i%j)) {
 		prim=FALSE;
