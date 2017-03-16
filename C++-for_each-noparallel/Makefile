@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS =-Wall -O2 -funroll-all-loops
+CXXFLAGS =-Wall -O2 -funroll-all-loops -std=gnu++14
 #CXXFLAGS+=-fopenmp -D_GLIBCXX_PARALLEL
 
 CXXFLAGS+=-DMAXNUM=3000000

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ParallelTest
 {
-    class Program
+    public class Program
     {
-	private static bool isPrime(int j)
+        private static bool isPrime(int j)
         {
             int sqj = (int)Math.Sqrt(j);
 
@@ -23,7 +23,7 @@ namespace ParallelTest
             return true;
         }
 
-        private static void FindPrimesTasks(int maxnum)
+        public static int FindPrimesTasks(int maxnum)
         {
 
             int num = 1;
@@ -56,6 +56,8 @@ namespace ParallelTest
             Task.WaitAll(tasks);
 
             Console.WriteLine($"{numberOfPrimes} darabot találtam {sw.ElapsedMilliseconds} ms alatt.");
+
+            return numberOfPrimes;
         }
 
         static void Main(string[] args)
