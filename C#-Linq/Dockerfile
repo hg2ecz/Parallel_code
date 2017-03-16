@@ -1,5 +1,6 @@
 FROM microsoft/dotnet
-COPY * /a/
+COPY . /a/
+RUN ls -l /a
 RUN cd /a/ParallelTest && \ 
     dotnet restore && \
     dotnet build -c Release && \
