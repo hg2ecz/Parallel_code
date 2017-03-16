@@ -9,9 +9,9 @@ namespace ParallelTest.UnitTests
         [TestMethod]
         public void NumberOfPrimesValid()
         {
-            int numPrimes = Program.FindPrimesLinq(1000);
+            int numPrimes = Program.FindPrimesLinq(3000000);
 
-            Assert.AreEqual(168, numPrimes);
+            Assert.AreEqual(216816, numPrimes);
         }
     }
 }
