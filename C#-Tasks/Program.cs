@@ -8,7 +8,7 @@ namespace ParallelTest
 {
     public class Program
     {
-	    private static bool isPrime(int j)
+        private static bool isPrime(int j)
         {
             int sqj = (int)Math.Sqrt(j);
 
