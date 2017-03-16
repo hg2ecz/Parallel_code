@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\C#-Tasks\ParallelTest.csproj" />
+    <ProjectReference Include="..\ParallelTest\ParallelTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
