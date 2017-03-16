@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ParallelTest
 {
-    class Program
+    public class Program
     {
-        private static void FindPrimesLinq(int maxnum)
+        public static int FindPrimesLinq(int maxnum)
         {
             Console.WriteLine($"Prímszámok keresése LINQ-val {maxnum}-ig...");
 
@@ -36,6 +36,8 @@ namespace ParallelTest
                 .Count();
 
             Console.WriteLine($"{numberOfPrimes} darabot találtam {sw.ElapsedMilliseconds} ms alatt.");
+
+            return numberOfPrimes;
         }
 
         static void Main(string[] args)
