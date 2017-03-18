@@ -12,7 +12,7 @@ How to run code on multicore CPU?
 <tr><td>C++-noparallel</td><td>18.323s<br>2.845s (with hw div)</td><td>5.587s</td> <td>2.009s</td><td>5.043s</td></tr>
 <tr><td>LUA-noparallel (LuaJIT)</td><td colspan="2">14.606s</td> <td colspan="2">11.425s</td></tr>
 <tr><td>Python-noparallel (Pypy)</td><td colspan="2">27.347s</td> <td colspan="2">no JIT, very slow </td></tr>
-<tr><td>C#-noparallel (mono)</td><td colspan="2">29.375s</td> <td colspan="2">6.685s</td></tr>
+<tr><td>C#-noparallel (mono)</td><td>29.375s</td><td>14.091s</td> <td colspan="2">6.685s</td><td>9.342s</td></tr>
 
 <tr><th colspan="5">Parallel on 4 cores</th></tr>
 <tr><td>C-OpenMP</td><td>4.706s<br>0.757s (with hw div)</td><td>2.071s</td>  <td>0.602s</td><td>1.357s</td></tr>
@@ -28,14 +28,14 @@ How to run code on multicore CPU?
 </table>
 
 
-# Software compile without hardware div:
+# Software compile without hardware int div:
 
 * on Cortex A53@32 bit Linux -march=native or -mcpu=native (why?)
 * -march=armv7-a
 * -mcpu=cortex-[a5 a8 a9] and arm1176jzf-s
 * default on 32 bit Linux (--&gt; runnable binary on all ARM Cortex)
 
-# Software compile with hardware div instruction:
+# Software compile with hardware int div instruction:
 
 * -march=armv8-*
 * <b>-mcpu=</b>cortex-[a7 a12 a15 a17] and all ARMv8 cpus <b>-mcpu=</b>cortex-[a32 a35 a53 a72]
