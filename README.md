@@ -32,7 +32,7 @@ How to run code on multicore CPU?
 
 * on Cortex A53@32 bit Linux -march=native or -mcpu=native
 * -march=armv7-a
-* -mcpu=cortex-[a5 a8 a9] and arm1176jzf-s and
+* -mcpu=cortex-[a5 a8 a9] and arm1176jzf-s
 * on 32 bit ARM Linux <b>without</b> -mcpu=  or -march=armv8-* parameters
 
 # Software with hardware div instruction:
