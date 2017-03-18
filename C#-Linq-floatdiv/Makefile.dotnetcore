@@ -1,0 +1,9 @@
+all:
+	cd ParallelTest && dotnet restore && dotnet build -c Release
+	cd ParallelTest.UnitTests && dotnet restore && dotnet build -c Release
+
+run:
+	dotnet ParallelTest/bin/Release/netcoreapp1.1/ParallelTest.dll 3000000
+
+unittests:
+	cd ParallelTest.UnitTests && dotnet test

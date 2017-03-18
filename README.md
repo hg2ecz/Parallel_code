@@ -19,9 +19,9 @@ How to run code on multicore CPU?
 <tr><td>C-pthread</td><td>4.407s<br>1.018s (with hw div)</td><td>2.040s</td>  <td>0.685s</td><td>1.357s</td></tr>
 <tr><td>C++-for_each</td><td>4.632s<br>0,768s (with hw div)</td><td>1.934s</td>  <td>0.533s</td><td>1.298s</td></tr>
 
-<tr><td>C#-Linq</td><td colspan="2">8.290s</td> <td colspan="2">2.140s</td></tr>
-<tr><td>C#-ParallelFor</td><td colspan="2">8.159s</td> <td colspan="2">2.089s</td></tr>
-<tr><td>C#-Tasks</td><td colspan="2">7.699s</td> <td colspan="2">1.773s</td></tr>
+<tr><td>C#-Linq</td><td>8.290s</td><td>4.284s</td> <td colspan="2">2.140s</td></tr>
+<tr><td>C#-ParallelFor</td><td>8.159s</td><td>4.173s</td> <td colspan="2">2.089s</td></tr>
+<tr><td>C#-Tasks</td><td>7.699s</td><td>3.930s</td> <td colspan="2">1.773s</td></tr>
 
 <tr><td>Python-multiprocessing (Pypy)</td><td colspan="2">18.273s</td> <td colspan="2">no JIT, very slow</td></tr>
 <tr><td>Python-thread-verySlow (Pypy)</td><td colspan="2">119.7s</td> <td colspan="2">no JIT, very slow</td></tr>
