@@ -10,6 +10,7 @@ How to run code on multicore CPU?
 <tr><td>C-noparallel</td><td>17.204s</td><td>7.631s</td></tr>
 <tr><td>LUA-noparallel (LuaJIT)</td><td colspan="2">14.606s</td></tr>
 <tr><td>Python-noparallel (Pypy)</td><td colspan="2">27.347s</td></tr>
+<tr><td>C#-noparallel (mono)</td><td colspan="2">29.375s</td></tr>
 
 <tr><th colspan="3">Parallel on 4 cores</th></tr>
 <tr><td>C-OpenMP</td><td>4.706s</td><td>2.071s</td></tr>
