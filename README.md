@@ -10,20 +10,20 @@ How to run code on multicore CPU?
 <tr><th>Prog</th><th>normal modulo</th><th>floatdiv</th><th>normal modulo</th><th>floatdiv</th></tr>
 <tr><td>C-noparallel</td><td>17.204s<br>2.674s (with hw div)</td><td>7.631s</td> <td>2.016s</td><td>4.996s</td></tr>
 <tr><td>C++-noparallel</td><td>18.323s<br>2.845s (with hw div)</td><td>5.587s</td> <td>2.009s</td><td>5.043s</td></tr>
-<tr><td>LUA-noparallel (LuaJIT)</td><td colspan="2">14.606s</td> <td colspan="2">11.425s</td></tr>
-<tr><td>Python-noparallel (Pypy)</td><td colspan="2">27.347s</td> <td colspan="2">no JIT, very slow </td></tr>
 <tr><td>C#-noparallel (mono)</td><td>29.375s</td><td>14.091s</td> <td>6.685s</td><td>9.342s</td></tr>
+<tr><td>LUA-noparallel (LuaJIT)</td><td colspan="2">14.606s</td> <td colspan="2">11.425s</td></tr>
+<tr><td>Python-noparallel (Pypy)</td><td>27.347s</td><td>22.766s</td> <td colspan="2">no JIT, very slow </td></tr>
 
 <tr><th colspan="5">Parallel on 4 cores</th></tr>
-<tr><td>C-OpenMP</td><td>4.706s<br>0.757s (with hw div)</td><td>2.071s</td>  <td>0.602s</td><td>1.357s</td></tr>
-<tr><td>C-pthread</td><td>4.407s<br>1.018s (with hw div)</td><td>2.040s</td>  <td>0.685s</td><td>1.357s</td></tr>
-<tr><td>C++-for_each</td><td>4.632s<br>0,768s (with hw div)</td><td>1.934s</td>  <td>0.533s</td><td>1.298s</td></tr>
+<tr><td>C-OpenMP</td><td>4.706s<br>0.757s (with hw div)</td><td>2.071s</td> <td>0.602s</td><td>1.357s</td></tr>
+<tr><td>C-pthread</td><td>4.407s<br>1.018s (with hw div)</td><td>2.040s</td> <td>0.685s</td><td>1.357s</td></tr>
+<tr><td>C++-for_each</td><td>4.632s<br>0,768s (with hw div)</td><td>1.934s</td> <td>0.533s</td><td>1.298s</td></tr>
 
-<tr><td>C#-Linq</td><td>8.290s</td><td>4.284s</td> <td colspan="2">2.140s</td></tr>
-<tr><td>C#-ParallelFor</td><td>8.159s</td><td>4.173s</td> <td colspan="2">2.089s</td></tr>
-<tr><td>C#-Tasks</td><td>7.699s</td><td>3.930s</td> <td colspan="2">1.773s</td></tr>
+<tr><td>C#-Linq</td><td>8.290s</td><td>4.284s</td> <td>2.136s</td><td>2.641s</td></tr>
+<tr><td>C#-ParallelFor</td><td>8.159s</td><td>4.173s</td> <td>2.089s</td><td>2.595s</td></tr>
+<tr><td>C#-Tasks</td><td>7.699s</td><td>3.930s</td> <td>1.773s</td><td>2.440s</td></tr>
 
-<tr><td>Python-multiprocessing (Pypy)</td><td colspan="2">18.273s</td> <td colspan="2">no JIT, very slow</td></tr>
+<tr><td>Python-multiprocessing (Pypy)</td><td>18.196s</td><td>17.792s</td> <td colspan="2">no JIT, very slow</td></tr>
 <tr><td>Python-thread-verySlow (Pypy)</td><td colspan="2">119.7s</td> <td colspan="2">no JIT, very slow</td></tr>
 </table>
 
