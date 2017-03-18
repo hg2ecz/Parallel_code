@@ -31,3 +31,11 @@ How to run code on multicore CPU?
 <tr><td>Python-multiprocessing (Pypy)</td><td colspan="2">18.273s</td> <td colspan="2">no JIT, very slow</td></tr>
 <tr><td>Python-thread-verySlow (Pypy)</td><td colspan="2">119.7s</td> <td colspan="2">no JIT, very slow</td></tr>
 </table>
+
+# ARM hardware div not default on 32 bit ARM:
+
+* on ARM Cortex A53@32 bit -march=native or -mcpu=native : no compiled sdiv instruction
+* -march=armv7-a : no compiled hardware div instruction
+* -march=armv8-* : with hardware div instruction
+* with hardware div instruction <b>-mcpu=</b>cortex-[a7 a12 a15 a17] and all armv8 <b>-mcpu=</b>cortex-[a32 a35 a53 a72]
+* without hardware div: -mcpu=cortex-[a5 a8 a9] and arm1176jzf-s and on 32 bit ARM system <b>without</b> -mcpu od -march=armv8-* parameters
