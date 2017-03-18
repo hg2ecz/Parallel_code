@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS =-Wall -O2 -funroll-all-loops -std=gnu11
 
-CFLAGS+=-DMAXNUM=3000000 -fopenmp -DCPUNUM=`nproc`
+CFLAGS+=-DMAXNUM=3000000 -Dfloatdiv
 
-LDFLAGS=-lm -s -lgomp
+LDFLAGS=-lm -s -lpthread
 OBJS=paralleltest.o
 
 TARGET=parallel

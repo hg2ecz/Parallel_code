@@ -21,7 +21,11 @@ int main() {
 	_Bool prim = TRUE;
 	int sqi = sqrtf(i);
 	for (int j = 2; j<=sqi; j++) {
+#ifdef floatdiv
+	    if (!(i - j*(int)((float)i/j))) { // on ARM11 .. ARM Cortex A53 float div faster than int div
+#else
 	    if (!(i%j)) {
+#endif
 		prim=FALSE;
 		break;
 	    }
