@@ -5,7 +5,7 @@ How to run code on multicore CPU?
 
 # Test result on Raspberry Pi3:
 
-<table style="text-al>
+<table>
 <tr><th>Prog</th><th>normal modulo</th><th>floatdiv</th></tr>
 <tr><td>C-noparallel</td><td>17.204s</td><td>7.631s</td></tr>
 <tr><td>LUA-noparallel (LuaJIT)</td><td colspan="2">14.606s</td></tr>
