@@ -16,7 +16,7 @@ How to run code on multicore CPU?
 
 <tr><th colspan="5">Parallel on 4 cores</th></tr>
 <tr><td>C-OpenMP</td><td>4.706s</td><td>2.071s</td>  <td>0.602s</td><td>1.357s</td></tr>
-<tr><td>C-pthread</td><td>4.407s</td><td>2.040s</td>  <td>0.685s</td><td>1.357s/td></tr>
+<tr><td>C-pthread</td><td>4.407s</td><td>2.040s</td>  <td>0.685s</td><td>1.357s</td></tr>
 <tr><td>C++-for_each</td><td>4.632s</td><td>1.934s</td>  <td>0.533s</td><td>1.298s</td></tr>
 
 <tr><td>C#-Linq</td><td colspan="2">8.290s</td> <td colspan="2">2.140s</td></tr>
