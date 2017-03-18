@@ -24,7 +24,7 @@ How to run code on multicore CPU?
 <tr><td>C#-Tasks</td><td>7.699s</td><td>3.930s</td> <td>1.773s</td><td>2.440s</td></tr>
 
 <tr><td>Python-multiprocessing (Pypy)</td><td>18.196s</td><td>17.792s</td> <td colspan="2">no JIT, very slow</td></tr>
-<tr><td>Python-thread-verySlow (Pypy)</td><td colspan="2">119.7s</td> <td colspan="2">no JIT, very slow</td></tr>
+<tr><td>Python-thread-verySlow (Pypy)</td><td>119.7s</td><td> &gt;100s slow</td> <td colspan="2">no JIT, very slow</td></tr>
 </table>
 
 
