@@ -11,7 +11,7 @@ How to run code on multicore CPU?
 <tr><td>C-noparallel</td><td>17.204s</td><td>7.631s</td> <td>2.016s</td><td>4.996s</td></tr>
 <tr><td>C++-noparallel</td><td>18.323s</td><td>5.587s</td> <td>2.009s</td><td>5.043s</td></tr>
 <tr><td>LUA-noparallel (LuaJIT)</td><td colspan="2">14.606s</td> <td colspan="2">11.425s</td></tr>
-<tr><td>Python-noparallel (Pypy)</td><td colspan="2">27.347s</td> <td colspan="2">noJIT,<br>very slow </td></tr>
+<tr><td>Python-noparallel (Pypy)</td><td colspan="2">27.347s</td> <td colspan="2">no JIT, very slow </td></tr>
 <tr><td>C#-noparallel (mono)</td><td colspan="2">29.375s</td> <td colspan="2">6.685s</td></tr>
 
 <tr><th colspan="5">Parallel on 4 cores</th></tr>
@@ -23,6 +23,6 @@ How to run code on multicore CPU?
 <tr><td>C#-ParallelFor</td><td colspan="2">8.159s</td> <td colspan="2">2.089s</td></tr>
 <tr><td>C#-Tasks</td><td colspan="2">7.699s</td> <td colspan="2">1.773s</td></tr>
 
-<tr><td>Python-multiprocessing (Pypy)</td><td colspan="2">18.273s</td> <td colspan="2">noJIT,<br>very slow</td></tr>
-<tr><td>Python-thread-verySlow (Pypy)</td><td colspan="2">119.7s</td> <td colspan="2">noJIT,<br>very slow</td></tr>
+<tr><td>Python-multiprocessing (Pypy)</td><td colspan="2">18.273s</td> <td colspan="2">no JIT, very slow</td></tr>
+<tr><td>Python-thread-verySlow (Pypy)</td><td colspan="2">119.7s</td> <td colspan="2">no JIT, very slow</td></tr>
 </table>
